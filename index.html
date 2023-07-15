@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Discover your Nike Era</title>
+        
+        <link rel="stylesheet" href="webpage-page1.css">
+        <link rel="stylesheet" href="webpage-page2.css">
+        <link rel="stylesheet" href="quiz-result-page.css">
+        <link rel="stylesheet" href="loading-page.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@1,200;1,900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.typekit.net/ocy2dph.css">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/CustomEase.min.js"></script>
+        <script src="https://kit.fontawesome.com/b0512937cb.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="nike-eras.js"></script>
+        <script type="text/javascript" src="data.json"></script>
+        <script type="text/javascript" src="burstdata.json"></script>
+        <script type="text/javascript" src="LoadingBar.json"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.11.0/lottie.min.js" integrity="sha512-XCthc/WzPfa+oa49Z3TI6MUK/zlqd67KwyRL9/R19z6uMqBNuv8iEnJ8FWHUFAjC6srr8w3FMZA91Tfn60T/9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+    <body class="background">
+        <div class="header-logo" id="logoanimation">
+            <script>
+                var animation= bodymovin.loadAnimation({
+                
+                    container: document.getElementById('logoanimation'),
+                    renderer: 'svg',
+                    loop: false,
+                    autoplay: true,
+                    path:'data.json',
+                    });
+                    
+            </script>
+            <!-- <img class="splash-logo" src="images/NikeEras.png"> -->
+        </div>
+        
+        <div class="welcome-text">
+            <p>
+                Hey there. Ready to <br> discover your NIKE <span> <img class="NIKE-text" src="images/Asset 1.png"> </span>?<br>
+            </p>
+        </div>
+        <div>
+            <img class ="welcome-shoe-left" src="images/nikeEraWelcome_shoeleft 1.png">
+            <img class ="welcome-shoe-right" src="images/nikeEras_welcome_shoeright 1.png">
+        </div>
+        <div class="first-name-box"> 
+            <input class="first-name-text" id="userNameInput" type="text" placeholder ="Enter First Name" maxlength="12"> <br><br>
+        </div>
+        <div class="start-quiz">
+            <button onclick="recordName()" class="start-button" id="startQuizButton">
+                <script>
+                    //Showing start button after user enters text
+                    document.getElementById('startQuizButton').style.display = 'none';
+                    document.getElementById('userNameInput').oninput = function(){
+                        document.getElementById('startQuizButton').style.display ='';
+                    }
+                </script>
+                start quiz<br><span class="fa-solid fa-arrow-down" style="color: #1e1e1e;"></span></button> 
+        </div>
+        
+        <div id="question1" class="question-1">
+            <div class="left-bar" id="leftBar">
+                <div class="line">
+                    <div class="nav-circles">
+                        <button class="circle-button"></button>
+                        <button class="circle-button"></button>
+                        <button class="circle-button"></button>
+                        <button class="circle-button"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="quiz-grid">
+                 <div></div>
+                <div class='quiz-content'>
+                    <div class="quiz-header-logo">
+                        <img class="quiz-logo" src="images/NikeEras.png">
+                    </div>
+                    <p class="quiz-question1-text">Pick a fashion trend to<br> bring back.<br></p>
+                    <div class="question-grid" data-question="q1">
+                        <button class="quiz-button quiz-button1" data-answer="A">
+                            BELL BOTTOMS
+                        </button> 
+                        
+                        <button class="quiz-button quiz-button2" data-answer="B">
+                            SHOULDER PADS
+                        </button>
+                    </div>
+                    <div class="next-button-grid">
+                        <button class="next-button" id="nextButtonq1" onclick="goToQuestion2()">
+                            next<br><span class="fa-solid fa-arrow-down" style="color: #1e1e1e;"></span></button> 
+                    </div>
+                    <div class="shadows">
+                        <img class="shadow shadow1" src="images/buttonshadow.png">
+                        <img class="shadow shadow2" src="images/buttonshadow.png">
+                    </div>
+            </div>
+            </div>
+        </div>
+        
+            
+        <div id="question2" class="question-2">
+            <div class="left-bar" id="leftBar">
+                <div class="line">
+                    <div class="nav-circles">
+                        <button class="circle-button-complete"></button>
+                        <button class="circle-button"></button>
+                        <button class="circle-button"></button>
+                        <button class="circle-button"></button>
+                    </div>
+                    <div class="burst-animation1" id="burstanimation1"></div>
+                </div>
+            </div>
+            <div class="quiz-grid">
+                <div></div>
+                <div class='quiz-content'>
+                    <div class="quiz-header-logo">
+                        <img class="quiz-logo" src="images/NikeEras.png">
+                    </div>
+                    <p class="quiz-question2-text">Pick a music<br> genre.<br></p>
+                    <div class="question-grid" data-question="q2">
+                        <button class="quiz-button quiz-button3" data-answer="A">
+                            ROCK
+                        </button> 
+                        <button class="quiz-button quiz-button4" data-answer="B">
+                            POP
+                        </button>
+                    </div>
+                    <div class="next-button-grid">
+                        <button class="next-button" id="nextButtonq2" onclick="goToQuestion3()">next<br><span class="fa-solid fa-arrow-down" style="color: #1e1e1e;"></span></button> 
+                    </div>
+                    <div class="shadows">
+                        <img class="shadow shadow3" src="images/buttonshadow.png">
+                        <img class="shadow shadow4" src="images/buttonshadow.png">
+                    </div>
+                </div>
+                </div>     
+        </div>
+
+        <div id="question3" class="question-3">
+            <div class="left-bar" id="leftBar">
+                <div class="line">
+                    <div class="nav-circles">
+                        <button class="circle-button-complete"></button>
+                        <button class="circle-button-complete"></button>
+                        <button class="circle-button"></button>
+                        <button class="circle-button"></button>
+                    </div>
+                    <div class="burst-animation2" id="burstanimation2"></div>
+                </div>
+            </div>
+            <div class="quiz-grid">
+                <div></div>
+                <div class='quiz-content'>
+                    <div class="quiz-header-logo">
+                        <img class="quiz-logo" src="images/NikeEras.png">
+                    </div>
+                    <p class="quiz-question3-text">Pick a life motto.</p>
+                    <div class="question-grid" data-question="q3">
+                        <button class="quiz-button quiz-button5" data-answer="A">
+                            "BE GROOVY OR <br>LEAVE, MAN"<br>
+                        </button> 
+                        <button class="quiz-button quiz-button6" data-answer="B">
+                            "WHAT WE DO IN LIFE ECHOS IN ETERNITY"
+                        </button>
+                    </div>
+                    <div class="next-button-grid">
+                        <button class="next-button" id="nextButtonq3" onclick="goToQuestion4()">next<br><span class="fa-solid fa-arrow-down" style="color: #1e1e1e;"></span></button> 
+                    </div>
+                    <div class="shadows">
+                        <img class="shadow shadow5" src="images/buttonshadow.png">
+                        <img class="shadow shadow6" src="images/buttonshadow.png">
+                    </div>
+                </div>
+                </div>     
+        </div>
+            <!-- <div class="page-one-spacer"></div> -->
+        <div id="question4" class="question-4">
+            <div class="left-bar" id="leftBar">
+                <div class="line">
+                    <div class="nav-circles">
+                        <button class="circle-button-complete"></button>
+                        <button class="circle-button-complete"></button>
+                        <button class="circle-button-complete"></button>
+                        <button class="circle-button"></button>
+                    </div>
+                    <div class="burst-animation3" id="burstanimation3"></div>
+                </div>
+            </div>
+            <div class="quiz-grid">
+                <div></div>
+                <div class='quiz-content'>
+                    <div class="quiz-header-logo">
+                        <img class="quiz-logo" src="images/NikeEras.png">
+                    </div>
+                    <p class="quiz-question4-text">Pick a movie.</p>
+                    <div class="question-grid" data-question="q4">
+                        <button class="quiz-button quiz-button7" data-answer="A">
+                            CLUELESS
+                        </button> 
+                        <button class="quiz-button quiz-button8" data-answer="B">
+                            THE GODFATHER
+                        </button>
+                    </div>
+                    <div class="next-button-grid">
+                        <button class="next-button" id="nextButtonq4" onclick="goToResultConfirm()">next<br><span class="fa-solid fa-arrow-down" style="color: #1e1e1e;"></span></button> 
+                    </div>
+                    <div class="shadows">
+                        <img class="shadow shadow7" src="images/buttonshadow.png">
+                        <img class="shadow shadow8" src="images/buttonshadow.png">
+                    </div>
+            </div>
+            </div>     
+        </div>
+        
+        <div class="calculate-results-page" id="resultConfirm">
+            <!-- <div class="result-page-content">
+     
+            </div> -->
+            
+            <div id="interactiveResults">
+                <div class="logo-container" id="logoContainer">
+                    <div class="cursor"></div>
+                        <div class="shapes">
+                            <div class="shape shape-1"></div>
+                            <div class="shape shape-2"></div>
+                            <div class="shape shape-3"></div>
+                        </div>
+                        <div class="screen" id="screen">
+                            <img class= "logo-screen" src="images/NikeTick_Screen-1.svg">
+                        </div>
+                        <div class="loading-bar" id="loadingBar"></div>
+                                  
+                        <button class="results-button" id="resultsButton" onclick="goToQuizResult()">
+                            See My Results
+                        </button>
+                        <p class="result-page-heading">
+                            
+                            <span id="userNameOutput" class="user-name"> 
+                            </span> <br><span> > </span><br>
+                        </p>
+                    </div>
+                </div>
+        </div>
+            <div class="quiz-result" id="quizResult">
+            <div class="quiz-result-container1">
+                <div class="navigation-buttons">
+                    <button class="retakequiz-button">retake quiz</button>
+                    <button class="explore-button">explore all eras</button>
+                    <button class="home-button">nike home</button>
+                    <button class="cart-button">my cart</button>
+                </div>
+                </div>
+            
+                <div class="eras-result-text">
+                    <p class="heading">
+                        <span id="userNameOutput"  class="user-name" > 
+                        </span>, you're <br>in your <span class="shoe-name-text" id="shoeName"></span> era!<br>
+                    </p>
+            </div>
+                
+            <div class="shoe-info-and-image">
+                        <img class="user-shoe" id="eraShoe" src= "">
+                <div class="container-shoe-info">
+                    <div class= "shoe-tags">
+                        <p class="tag" id="releasedTag">
+                            <span class="tag-bold" >Released:</span>
+                        </p>
+                        <p class="tag" id="designerTag">
+                            <span class="tag-bold" >Designer:</span>
+                        </p>
+                        <p class="tag" id="tagTag">
+                            <span class="tag-bold" >Tags:</span>
+                        </p>
+                    </div>
+                    <p class="shoe-info-text" id="shoeDescription">
+                        
+                    </p>
+                    <button class="shop-range-button">
+                        Shop range
+                    </button>
+                </div>
+            </div>
+            </div>   
+        
+            <script type="text/javascript" src="animation.js"></script>
+    </body>
+
+</html>

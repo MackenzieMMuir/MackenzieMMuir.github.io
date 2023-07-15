@@ -1,0 +1,176 @@
+.quiz-result {
+    padding-bottom: 100px;
+    width: 100%;
+}
+
+.quiz-result-container1 {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: 70px;
+    align-items: end;
+    margin-bottom: 30px;;
+
+}
+
+.retakequiz-button, .explore-button, .home-button, .cart-button {
+    font-family: "Nunito Sans", Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #e8e8e8;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+.retakequiz-button:hover, .explore-button:hover, .home-button:hover, .cart-button:hover {
+    opacity: 75%;
+}
+
+.retakequiz-button, .explore-button, .home-button {
+    border-right: 1px solid;
+    border-top: 0;
+    border-left: 0;
+    border-bottom: 0;
+    border-color: #1e1e1e;
+
+} 
+
+.cart-button {
+  border: none;
+}
+
+.result-page-header-logo {
+    height: 30px;
+}
+
+.eras-result-text {
+    height: max-content; 
+    position:absolute;
+    font-family: "Nunito Sans", Helvetica, sans-serif;
+    font-size: 100px;
+    font-weight: 800;
+    line-height: .95;
+    word-spacing: -5px;
+    letter-spacing: 1px;;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 3px;
+    margin-bottom: 30px;
+    word-wrap: normal;
+    width: 1200px;
+}
+
+.user-name {
+    font-family: "Nunito Sans", Helvetica, sans-serif;
+    font-size: 100px;
+    font-weight: 800;
+    line-height: .95;
+    word-spacing: -5px;
+    letter-spacing: 1px;
+}
+.shoe-name-text {
+    color: #FB6A1F;
+}
+
+.shoe-info-tags {
+    display: flex;
+    padding-top: 0px;
+    padding-bottom: 10px;
+    margin-left: 100px;
+    width: 600px;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    margin-top: 100px;
+}
+
+.shoe-tags {
+    display:inline;
+    width: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: space-between;
+    
+}
+
+.tag {
+    font-family: "Nunito Sans", Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    word-spacing: 1px;
+    letter-spacing: .24px;
+    border: solid 2px; 
+    border-radius: 15px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 9px;
+    padding-right: 9px;
+    width: fit-content;
+    display: inline;
+    margin-right: 20px;
+
+}
+
+.tag-bold {
+    font-weight: 700;
+}
+
+.shoe-info-and-image {
+    margin-left: 100px;
+}
+
+
+.container-shoe-info {
+    padding-top: 250px;
+
+}
+.shoe-info-text {
+    font-family: "Nunito Sans", Helvetica, sans-serif;
+    position: relative;
+    font-size: 16px;
+    font-weight: 400;
+    word-spacing: .6px;
+    letter-spacing: .24px;
+    width: 800px;
+    padding-top: 50px;
+
+}
+
+.user-shoe {
+    object-fit: contain;
+    width: 100%;
+    float: right;
+    shape-outside: ellipse(18.73% 15.92% at 1214px 483px);
+    position: relative;
+    height: 600px;
+    padding-left: 400px;
+    right: -400px;
+    overflow: hidden;
+    padding-top: 130px;
+    z-index: 0;
+}
+
+.shop-range-button {
+    font-family: "Nunito Sans", Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    word-spacing: 1px;
+    letter-spacing: .1px;
+    margin-top: 40px;
+    padding-top: 8px;
+    padding-left: 40px;
+    padding-bottom: 8px;
+    padding-right: 40px;
+    border: solid 3px;
+    background-color: #e8e8e8;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.shop-range-button:hover {
+    color: white;
+    background-color: #1e1e1e;
+    border: solid 3px;
+    transition: 1s;
+}
+
